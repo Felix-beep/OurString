@@ -1,0 +1,21 @@
+# ninja log v5
+2	58	7169257374585027	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	e42afefc996f1956
+2	58	7169257374585027	C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	e42afefc996f1956
+58	1513	7169257389142877	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	2e5e7aa65ce62bd
+58	1513	7169257389142877	C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	2e5e7aa65ce62bd
+1524	1574	7169257389752844	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	3e41cb1ddb376e62
+1524	1574	7169257389752844	C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	3e41cb1ddb376e62
+1574	1627	7169257390273974	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	15f3d6c71b291e73
+1574	1627	7169257390273974	C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	15f3d6c71b291e73
+1627	1676	7169257390779850	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	6a8dafac95a068dd
+1627	1676	7169257390779850	C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	6a8dafac95a068dd
+1676	1724	7169257391255718	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	a72b92fd6b612727
+1676	1724	7169257391255718	C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	a72b92fd6b612727
+1724	1770	7169257391722200	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	af32404c5fd69ff3
+1724	1770	7169257391722200	C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	af32404c5fd69ff3
+1771	1818	7169257392198123	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	91158d71af3bbd14
+1771	1818	7169257392198123	C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	91158d71af3bbd14
+1818	1883	7169257392847920	CMakeFiles/googletest-populate-complete	c9913040736318b2
+1818	1883	7169257392847920	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	c9913040736318b2
+1818	1883	7169257392847920	C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete	c9913040736318b2
+1818	1883	7169257392847920	C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	c9913040736318b2

@@ -1,0 +1,56 @@
+[
+{
+  "directory": "C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug",
+  "command": "D:\\VS2022\\VS\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\src /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /w14242 /w14254 /w14263 /w14265 /w14287 /we4289 /w14296 /w14311 /w14545 /w14546 /w14547 /w14549 /w14555 /w14619 /w14640 /w14826 /w14905 /w14906 /w14928 /permissive- /FoCMakeFiles\\string.dir\\src\\string.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\wisdom\\source\\repos\\String_template_2\\src\\string.cpp",
+  "file": "C:\\Users\\wisdom\\source\\repos\\String_template_2\\src\\string.cpp",
+  "output": "CMakeFiles\\string.dir\\src\\string.cpp.obj"
+},
+{
+  "directory": "C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug",
+  "command": "D:\\VS2022\\VS\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\include -external:IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\include -external:IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest -external:W0 /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /W4 /w14242 /w14254 /w14263 /w14265 /w14287 /we4289 /w14296 /w14311 /w14545 /w14546 /w14547 /w14549 /w14555 /w14619 /w14640 /w14826 /w14905 /w14906 /w14928 /permissive- /Fotest\\CMakeFiles\\string_test_Tests.dir\\src\\string_test.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\wisdom\\source\\repos\\String_template_2\\test\\src\\string_test.cpp",
+  "file": "C:\\Users\\wisdom\\source\\repos\\String_template_2\\test\\src\\string_test.cpp",
+  "output": "test\\CMakeFiles\\string_test_Tests.dir\\src\\string_test.cpp.obj"
+},
+{
+  "directory": "C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug",
+  "command": "D:\\VS2022\\VS\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /Fo_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock.dir\\__\\googletest\\src\\gtest-all.cc.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "file": "C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "output": "_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock.dir\\__\\googletest\\src\\gtest-all.cc.obj"
+},
+{
+  "directory": "C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug",
+  "command": "D:\\VS2022\\VS\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /Fo_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\src\\gmock-all.cc",
+  "file": "C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\src\\gmock-all.cc",
+  "output": "_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj"
+},
+{
+  "directory": "C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug",
+  "command": "D:\\VS2022\\VS\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /Fo_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock_main.dir\\__\\googletest\\src\\gtest-all.cc.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "file": "C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "output": "_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock_main.dir\\__\\googletest\\src\\gtest-all.cc.obj"
+},
+{
+  "directory": "C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug",
+  "command": "D:\\VS2022\\VS\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /Fo_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock-all.cc.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\src\\gmock-all.cc",
+  "file": "C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\src\\gmock-all.cc",
+  "output": "_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock-all.cc.obj"
+},
+{
+  "directory": "C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug",
+  "command": "D:\\VS2022\\VS\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /Fo_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock_main.cc.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\src\\gmock_main.cc",
+  "file": "C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googlemock\\src\\gmock_main.cc",
+  "output": "_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock_main.cc.obj"
+},
+{
+  "directory": "C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug",
+  "command": "D:\\VS2022\\VS\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\include -IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /Fo_deps\\googletest-build\\googletest\\CMakeFiles\\gtest.dir\\src\\gtest-all.cc.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "file": "C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "output": "_deps\\googletest-build\\googletest\\CMakeFiles\\gtest.dir\\src\\gtest-all.cc.obj"
+},
+{
+  "directory": "C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug",
+  "command": "D:\\VS2022\\VS\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -external:IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\include -external:IC:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest -external:W0 /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /Fo_deps\\googletest-build\\googletest\\CMakeFiles\\gtest_main.dir\\src\\gtest_main.cc.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\src\\gtest_main.cc",
+  "file": "C:\\Users\\wisdom\\source\\repos\\String_template_2\\out\\build\\x64-Debug\\_deps\\googletest-src\\googletest\\src\\gtest_main.cc",
+  "output": "_deps\\googletest-build\\googletest\\CMakeFiles\\gtest_main.dir\\src\\gtest_main.cc.obj"
+}
+]
