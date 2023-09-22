@@ -4,30 +4,43 @@
 
 namespace technikum
 {
-    class string
-    {
-        private:
-            int i_length;
-            char* c_data;
-            size_t s_reservedSpace = 0;
+      class string
+      {
+           private:
+                int i_length;
+                char* c_data;
+                size_t s_reservedSpace = 0;
 
-        public:
-            string();
-            string(const char* charArray);
-            ~string();
+           public:
+                // constructor without parameters
+                string();
 
-            void append(const char* charArray);
+                // constructor with parameters
+                string(const char* charArray);
 
-            void reserve(const std::size_t LengthToReserve);
+                // copyconstructor
+                string(const string& other);
 
-            size_t capacity();
+                // destructor without parameters
+                ~string();
 
-            int length();
-            
-            int size();
+                // adds a char array to the currently saved char crray
+                void append(const char* charArray);
 
-            char* c_str();
+                // reserves a certain size for the array so that at least n characters can be saved in the array.
+                void reserve(const std::size_t LengthToReserve);
 
-            char** c_str_addr();
-    };
+                // returns the reserved size for the array.
+                // capacity here is equal to how many characters can be saved in the array.
+                size_t capacity();
+
+                // returns the length of the string without "\0"
+                int length();
+
+                //  returns the length of the string in bytes without "\0"
+                int size();
+
+                // returns the saved char array
+                char* c_str();
+      };
 }

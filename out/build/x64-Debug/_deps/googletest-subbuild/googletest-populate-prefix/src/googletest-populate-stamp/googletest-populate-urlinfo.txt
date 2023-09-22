@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=url
-command=D:/VS2022/VS/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-P;C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/download-googletest-populate.cmake;COMMAND;D:/VS2022/VS/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-P;C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/verify-googletest-populate.cmake;COMMAND;D:/VS2022/VS/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-P;C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/extract-googletest-populate.cmake
-source_dir=C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps/googletest-src
-work_dir=C:/Users/wisdom/source/repos/String_template_2/out/build/x64-Debug/_deps
+command=C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-P;C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/download-googletest-populate.cmake;COMMAND;C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-P;C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/verify-googletest-populate.cmake;COMMAND;C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-P;C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/extract-googletest-populate.cmake
+source_dir=C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-src
+work_dir=C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps
 url(s)=https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
 hash=
 no_extract=
