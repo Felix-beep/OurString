@@ -7,8 +7,8 @@ namespace technikum
       class string
       {
            private:
-                int i_length;
-                char* c_data;
+                int i_length; /* make it a longer int */
+                char* c_data; /* check if charArray is null*/
                 size_t s_reservedSpace = 0;
 
            public:
@@ -25,7 +25,7 @@ namespace technikum
                 ~string();
 
                 // adds a char array to the currently saved char crray
-                void append(const char* charArray);
+                void append(const char* charArray); /* make it return a pointer to this element so you can chain it*/
 
                 // reserves a certain size for the array so that at least n characters can be saved in the array.
                 void reserve(const std::size_t LengthToReserve);
@@ -35,7 +35,7 @@ namespace technikum
                 size_t capacity();
 
                 // returns the length of the string without "\0"
-                int length();
+                int length(); /* make it const by adding const behind length */
 
                 //  returns the length of the string in bytes without "\0"
                 int size();

@@ -3,6 +3,7 @@
 
 namespace technikum
 {
+  /* make these private functions */
   static int GetLength(const char* charArray);
   static char* CopyCharArray(const char* charArray, const char lengthOfArray);
   static void CopyCharArrayWithOffSet(
@@ -15,6 +16,8 @@ namespace technikum
   {
     // create an array with just a "\0" to signal an empty string
     i_length = 0;
+
+    /* make it point to a null ptr and not just "\0"*/
     c_data = new char[1];
     c_data[0] = '\0';
     s_reservedSpace = 0;
@@ -22,6 +25,7 @@ namespace technikum
 
   string::string(const char* charArray)
   {
+
     // get length of the charArray
     i_length = GetLength(charArray);
 
@@ -41,6 +45,7 @@ namespace technikum
 
   string::~string()
   {
+    /* always use delete[] so you don't only delete the value the pointer */
     delete c_data;
   }
 
@@ -138,6 +143,8 @@ namespace technikum
 
   // **** HELPER FUNCTIONS ****
 
+  // make these more save 
+
   // gets the length of a char array without the "\0"
   static int GetLength(const char* charArray)
   {
@@ -173,4 +180,4 @@ namespace technikum
       outputCharArray[offset + i] = inputCharArray[i];
     }
   }
-}  // namespace technikum
+}  
