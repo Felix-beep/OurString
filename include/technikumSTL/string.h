@@ -8,20 +8,20 @@ namespace technikum
       {
            private:
                 int i_length; /* make it a longer int */
-                char* c_data; /* check if charArray is null*/
+                char* c_data; 
                 size_t s_reservedSpace = 0;
 
+                // returns the length of a charArray
                 static int GetLength(const char* charArray);
+                // reserves a X long Array and then copies charArray into it - lengthOfArray can be bigger than charArray
                 static char* CopyCharArray(const char* charArray, const char lengthOfArray);
-                static char* AppendCharArrayWithoutOffset(
-                    const char* outputCharArray, 
-                    const char* inputCharArray, 
-                    const char lengthOfInputCharArray);
-                static char* AppendCharArrayWithOffset(
-                    const char* outputCharArray,
-                    const char* inputCharArray,
+                // adds a secondCharArray to the firstCharArray without reallocating
+                static char* AddToExistingCharArray(
+                    char* firstCharArray, 
+                    const char* secondCharArray, 
                     const char lengthOfInputCharArray,
                     const int offset);
+                // reallocates two charsArrays into one
                 static char* MergeTwoCharArrays(const char* firstCharArray, const char* secondCharArray);
 
            public:

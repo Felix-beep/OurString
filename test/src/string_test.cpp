@@ -198,12 +198,17 @@ TEST(TestNullptr, Append)
     technikum::string StringOne;
     technikum::string StringTwo;
 
-	StringOne.append(StringTwo.c_str());
+    StringOne.append(StringTwo.c_str());
 
-	EXPECT_STREQ(StringOne.c_str(), "");
-    EXPECT_EQ(StringOne.length(), 0);
-    EXPECT_EQ(StringOne.size(), 0);
-    EXPECT_EQ(StringOne.capacity(), 0);
+    std::string StdStringOne;
+    std::string StdStringTwo;
+
+    StdStringOne.append(StdStringTwo.c_str());
+
+    EXPECT_STREQ(StringOne.c_str(), StdStringOne.c_str());
+    EXPECT_EQ(StringOne.length(), StdStringOne.length());
+    EXPECT_EQ(StringOne.size(), StdStringOne.size());
+    EXPECT_LE(StringOne.capacity(), StdStringOne.capacity());
 }
 
 TEST(TestNullptr, AppendFirst)
@@ -213,10 +218,15 @@ TEST(TestNullptr, AppendFirst)
 
     StringOne.append(StringTwo.c_str());
 
-    EXPECT_STREQ(StringOne.c_str(), "Hello ");
-    EXPECT_EQ(StringOne.length(), 6);
-    EXPECT_EQ(StringOne.size(), 6);
-    EXPECT_EQ(StringOne.capacity(), 6);
+    std::string StdStringOne("Hello ");
+    std::string StdStringTwo;
+
+    StdStringOne.append(StdStringTwo.c_str());
+
+    EXPECT_STREQ(StringOne.c_str(), StdStringOne.c_str());
+    EXPECT_EQ(StringOne.length(), StdStringOne.length());
+    EXPECT_EQ(StringOne.size(), StdStringOne.size());
+    EXPECT_LE(StringOne.capacity(), StdStringOne.capacity());
 }
 
 TEST(TestNullptr, AppendSecond)
@@ -226,8 +236,13 @@ TEST(TestNullptr, AppendSecond)
 
     StringOne.append(StringTwo.c_str());
 
-    EXPECT_STREQ(StringOne.c_str(), "World");
-    EXPECT_EQ(StringOne.length(), 5);
-    EXPECT_EQ(StringOne.size(), 5);
-    EXPECT_EQ(StringOne.capacity(), 5);
+	std::string StdStringOne;
+    std::string StdStringTwo("World");
+
+    StdStringOne.append(StdStringTwo.c_str());
+
+    EXPECT_STREQ(StringOne.c_str(), StdStringOne.c_str());
+    EXPECT_EQ(StringOne.length(), StdStringOne.length());
+    EXPECT_EQ(StringOne.size(), StdStringOne.size());
+    EXPECT_LE(StringOne.capacity(), StdStringOne.capacity());
 }

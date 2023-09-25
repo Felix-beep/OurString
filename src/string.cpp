@@ -161,61 +161,47 @@ namespace technikum
     return NewCharArray;
   }
 
-  char* string::AppendCharArrayWithoutOffset(
-      const char* firstCharArray,
+  char* string::AddToExistingCharArray(
+      char* firstCharArray,
       const char* secondCharArray,
-      const char lengthOTotalCharArray)
+      const char lengthOTotalCharArray,
+      const int offset)
   {
-    return AppendCharArrayWithOffset(firstCharArray, secondCharArray, lengthOTotalCharArray, 0);
-  }
-
-  char* string::AppendCharArrayWithOffset(
-        const char* firstCharArray,
-        const char* secondCharArray,
-        const char lengthOfTotalCharArray,
-        const int offset)
-  {
-    if (lengthOfTotalCharArray == 0)
-      return nullptr;
-
-    if (firstCharArray == nullptr)
+    for (int i = 0; i < lengthOTotalCharArray && secondCharArray[i] != '\0'; ++i)
     {
-      return CopyCharArray(secondCharArray, lengthOfTotalCharArray);
+      firstCharArray[offset + i] = secondCharArray[i];
     }
 
-    if (secondCharArray == nullptr)
-    {
-      return CopyCharArray(firstCharArray, lengthOfTotalCharArray);
-    }
+    firstCharArray[lengthOTotalCharArray] = '\0';
 
-    char* NewCharArray = CopyCharArray(firstCharArray, lengthOfTotalCharArray);
-
-    int i = 0;
-
-    for (i; i < lengthOfTotalCharArray && secondCharArray[i] != '\0'; ++i)
-    {
-      NewCharArray[offset + i] = secondCharArray[i];
-    }
-
-    NewCharArray[offset + i] = '\0';
-
-    return NewCharArray;
+    return firstCharArray;
   }
 
   char* string::MergeTwoCharArrays(const char* firstCharArray, const char* secondCharArray)
   {
-        int lengthFirstArray = GetLength(firstCharArray);
-        int lengthSecondArray = GetLength(secondCharArray);
+    int lengthFirstArray = GetLength(firstCharArray);
+    int lengthSecondArray = GetLength(secondCharArray);
 
-        int combinedLength = lengthFirstArray + lengthSecondArray;
-        int neededSpace = combinedLength + 1;
+    int combinedLength = lengthFirstArray + lengthSecondArray;
+    int neededSpace = combinedLength + 1;
 
-        char* NewCharArray = AppendCharArrayWithoutOffset(nullptr, firstCharArray, combinedLength);
-        char* AppendedCharArray = AppendCharArrayWithOffset(NewCharArray, secondCharArray, combinedLength, lengthFirstArray);
+    if (combinedLength == 0)
+      return nullptr;
 
-        delete[] NewCharArray;
+    if (firstCharArray == nullptr)
+    {
+      return CopyCharArray(secondCharArray, combinedLength);
+    }
 
-        return AppendedCharArray;
+    if (secondCharArray == nullptr)
+    {
+      return CopyCharArray(firstCharArray, combinedLength);
+    }
+
+    char* NewCharArray = CopyCharArray(firstCharArray, combinedLength);
+
+    NewCharArray = AddToExistingCharArray(NewCharArray, secondCharArray, combinedLength, lengthFirstArray);
+
+    return NewCharArray;
   }
-
 }  
