@@ -19,7 +19,7 @@ namespace technikum
                 static char* AddToExistingCharArray(
                     char* firstCharArray, 
                     const char* secondCharArray, 
-                    const char lengthOfInputCharArray,
+                    const char lengthOTotalCharArray,
                     const int offset);
                 // reallocates two charsArrays into one
                 static char* MergeTwoCharArrays(const char* firstCharArray, const char* secondCharArray);
