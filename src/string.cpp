@@ -3,23 +3,13 @@
 
 namespace technikum
 {
-  /* make these private functions */
-  static int GetLength(const char* charArray);
-  static char* CopyCharArray(const char* charArray, const char lengthOfArray);
-  static void CopyCharArrayWithOffSet(
-      char* outputCharArray,
-      const char* inputCharArray,
-      const char lengthOfInputCharArray,
-      const int offset);
 
   string::string()
   {
     // create an array with just a "\0" to signal an empty string
     i_length = 0;
 
-    /* make it point to a null ptr and not just "\0"*/
-    c_data = new char[1];
-    c_data[0] = '\0';
+    c_data = nullptr;
     s_reservedSpace = 0;
   }
 
@@ -45,43 +35,34 @@ namespace technikum
 
   string::~string()
   {
-    /* always use delete[] so you don't only delete the value the pointer */
-    delete c_data;
+    delete[] c_data;
   }
 
-  void string::append(const char* charArray)
+  technikum::string string::append(const char* charArray)
   {
     // get length of the charArray
-    int Charlength = GetLength(charArray);
+    int CharLength = GetLength(charArray);
 
     // if there is nothing to copy
-    if (Charlength < 1)
-      return;
+    if (CharLength < 1)
+      return *this;
 
     // get spaced required for the chars of both arrays
-    int NeededSpace = i_length + Charlength;
+    int NeededSpace = i_length + CharLength;
 
-    size_t NeededSize = NeededSpace * sizeof(char);
+    size_t NeededSize = (NeededSpace + 1 ) * sizeof(char);
 
     // check if we already have enough space reserved
     if (s_reservedSpace < NeededSize)
     {
       // if we dont have enough space
-      char* NewCharArray = new char[NeededSpace + 1];
+      char* NewCharArray = MergeTwoCharArrays(c_data, charArray);
 
-      // copy c_data to the a new place
-      CopyCharArrayWithOffSet(NewCharArray, c_data, i_length, 0);
-
-      // copy charArray to the a new place
-      CopyCharArrayWithOffSet(NewCharArray, charArray, Charlength, i_length);
-
-      NewCharArray[NeededSpace] = '\0';
-
-      i_length = i_length + Charlength;
+      i_length = NeededSpace;
       s_reservedSpace = NeededSpace;
 
       // delete the old c_data
-      delete c_data;
+      delete[] c_data;
 
       // overwrite it with the new one
       c_data = NewCharArray;
@@ -90,13 +71,17 @@ namespace technikum
     {
       // if we do have enough space
       // copy the new charArray to the end of c_data
-
-      CopyCharArrayWithOffSet(c_data, charArray, Charlength, i_length);
+      for (int i = 0; i < NeededSpace && charArray[i] != '\0'; ++i)
+      {
+        c_data[i_length + i] = charArray[i];
+      }
 
       c_data[NeededSpace] = '\0';
 
       i_length = NeededSpace;
     }
+
+    return *this;
   }
 
   void string::reserve(const std::size_t LengthToReserve)
@@ -114,30 +99,31 @@ namespace technikum
     NewCharArray = CopyCharArray(c_data, LengthToReserve);
 
     // delete the old c_data
-    delete c_data;
+    delete[] c_data;
 
     // overwrite it with the new one
     c_data = NewCharArray;
     s_reservedSpace = LengthToReserve;
   }
 
-  size_t string::capacity()
+  size_t string::capacity() const
   {
     return s_reservedSpace;
   }
 
-  int string::length()
+  int string::length() const
   {
     return i_length;
   }
 
-  int string::size()
+  int string::size() const
   {
     return i_length * sizeof(char);
   }
 
-  char* string::c_str()
+  const char* string::c_str() const
   {
+    if (c_data == nullptr) return "";
     return c_data;
   }
 
@@ -146,8 +132,10 @@ namespace technikum
   // make these more save 
 
   // gets the length of a char array without the "\0"
-  static int GetLength(const char* charArray)
+  int string::GetLength(const char* charArray)
   {
+    if (charArray == nullptr) return 0;
+
     int result = 0;
     while (charArray[result] != '\0')
     {
@@ -156,28 +144,78 @@ namespace technikum
     return result;
   }
 
-  static char* CopyCharArray(const char* charArray, const char lengthOfArray)
+  char* string::CopyCharArray(const char* charArray, const char lengthOfArray)
   {
+    if (charArray == nullptr)
+      return nullptr;
+
     char* NewCharArray = new char[lengthOfArray + 1];
 
-    for (int i = 0; i < lengthOfArray; ++i)
+    int i = 0;
+    for (; i < lengthOfArray && charArray[i] != '\0'; ++i)
     {
       NewCharArray[i] = charArray[i];
     }
-    NewCharArray[lengthOfArray] = '\0';
+    NewCharArray[i] = '\0';
 
     return NewCharArray;
   }
 
-  static void CopyCharArrayWithOffSet(
-      char* outputCharArray,
-      const char* inputCharArray,
-      const char lengthOfInputCharArray,
-      const int offset)
+  char* string::AppendCharArrayWithoutOffset(
+      const char* firstCharArray,
+      const char* secondCharArray,
+      const char lengthOTotalCharArray)
   {
-    for (int i = 0; i < lengthOfInputCharArray; ++i)
-    {
-      outputCharArray[offset + i] = inputCharArray[i];
-    }
+    return AppendCharArrayWithOffset(firstCharArray, secondCharArray, lengthOTotalCharArray, 0);
   }
+
+  char* string::AppendCharArrayWithOffset(
+        const char* firstCharArray,
+        const char* secondCharArray,
+        const char lengthOfTotalCharArray,
+        const int offset)
+  {
+    if (lengthOfTotalCharArray == 0)
+      return nullptr;
+
+    if (firstCharArray == nullptr)
+    {
+      return CopyCharArray(secondCharArray, lengthOfTotalCharArray);
+    }
+
+    if (secondCharArray == nullptr)
+    {
+      return CopyCharArray(firstCharArray, lengthOfTotalCharArray);
+    }
+
+    char* NewCharArray = CopyCharArray(firstCharArray, lengthOfTotalCharArray);
+
+    int i = 0;
+
+    for (i; i < lengthOfTotalCharArray && secondCharArray[i] != '\0'; ++i)
+    {
+      NewCharArray[offset + i] = secondCharArray[i];
+    }
+
+    NewCharArray[offset + i] = '\0';
+
+    return NewCharArray;
+  }
+
+  char* string::MergeTwoCharArrays(const char* firstCharArray, const char* secondCharArray)
+  {
+        int lengthFirstArray = GetLength(firstCharArray);
+        int lengthSecondArray = GetLength(secondCharArray);
+
+        int combinedLength = lengthFirstArray + lengthSecondArray;
+        int neededSpace = combinedLength + 1;
+
+        char* NewCharArray = AppendCharArrayWithoutOffset(nullptr, firstCharArray, combinedLength);
+        char* AppendedCharArray = AppendCharArrayWithOffset(NewCharArray, secondCharArray, combinedLength, lengthFirstArray);
+
+        delete[] NewCharArray;
+
+        return AppendedCharArray;
+  }
+
 }  

@@ -9,7 +9,7 @@ TEST(TestConstructor, SimpleString)
 
 	  technikum::string OurString(Sentence);
 
-	  ASSERT_EQ(std::strcmp(OurString.c_str(), Sentence), 0);
+	  ASSERT_STREQ(OurString.c_str(), Sentence);
 }
 
 TEST(TestConstructor, EmptyString)
@@ -181,4 +181,53 @@ TEST(TestCapacity, ComparedToStdString)
 	// less or equal
 	// std takes more memory space
 	EXPECT_LE(OurString.capacity(), StdString.capacity());
+}
+
+TEST(TestNullptr, Constructor)
+{
+        technikum::string StringOne;
+
+        EXPECT_STREQ(StringOne.c_str(), "");
+        EXPECT_EQ(StringOne.length(), 0);
+        EXPECT_EQ(StringOne.size(), 0);
+        EXPECT_EQ(StringOne.capacity(), 0);
+}
+
+TEST(TestNullptr, Append)
+{
+    technikum::string StringOne;
+    technikum::string StringTwo;
+
+	StringOne.append(StringTwo.c_str());
+
+	EXPECT_STREQ(StringOne.c_str(), "");
+    EXPECT_EQ(StringOne.length(), 0);
+    EXPECT_EQ(StringOne.size(), 0);
+    EXPECT_EQ(StringOne.capacity(), 0);
+}
+
+TEST(TestNullptr, AppendFirst)
+{
+    technikum::string StringOne("Hello ");
+    technikum::string StringTwo;
+
+    StringOne.append(StringTwo.c_str());
+
+    EXPECT_STREQ(StringOne.c_str(), "Hello ");
+    EXPECT_EQ(StringOne.length(), 6);
+    EXPECT_EQ(StringOne.size(), 6);
+    EXPECT_EQ(StringOne.capacity(), 6);
+}
+
+TEST(TestNullptr, AppendSecond)
+{
+    technikum::string StringOne;
+    technikum::string StringTwo("World");
+
+    StringOne.append(StringTwo.c_str());
+
+    EXPECT_STREQ(StringOne.c_str(), "World");
+    EXPECT_EQ(StringOne.length(), 5);
+    EXPECT_EQ(StringOne.size(), 5);
+    EXPECT_EQ(StringOne.capacity(), 5);
 }
