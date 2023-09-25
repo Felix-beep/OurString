@@ -15,7 +15,6 @@ namespace technikum
 
   string::string(const char* charArray)
   {
-
     // get length of the charArray
     i_length = GetLength(charArray);
 
@@ -71,13 +70,8 @@ namespace technikum
     {
       // if we do have enough space
       // copy the new charArray to the end of c_data
-      for (int i = 0; i < NeededSpace && charArray[i] != '\0'; ++i)
-      {
-        c_data[i_length + i] = charArray[i];
-      }
-
-      c_data[NeededSpace] = '\0';
-
+      c_data = AddToExistingCharArray(c_data, charArray, NeededSpace, i_length);
+      
       i_length = NeededSpace;
     }
 
@@ -188,18 +182,22 @@ namespace technikum
     if (combinedLength == 0)
       return nullptr;
 
+    // return a copy of 2nd charArray as merge result
     if (firstCharArray == nullptr)
     {
       return CopyCharArray(secondCharArray, combinedLength);
     }
 
+    // return a copy of 1st charArray as merge result
     if (secondCharArray == nullptr)
     {
       return CopyCharArray(firstCharArray, combinedLength);
     }
 
+    // create a copy of the char Array
     char* NewCharArray = CopyCharArray(firstCharArray, combinedLength);
 
+    // add the secondchararray
     NewCharArray = AddToExistingCharArray(NewCharArray, secondCharArray, combinedLength, lengthFirstArray);
 
     return NewCharArray;
