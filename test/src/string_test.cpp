@@ -50,6 +50,61 @@ TEST(TestConstructor, CopyConstructor)
 	  EXPECT_STREQ(StringTwo.c_str(), "Hello");
 }
 
+// copy constructor
+TEST(TestCopyOperator, SimpleCopy)
+{
+	technikum::string StringOne("Hello");
+
+	technikum::string StringTwo = StringOne;
+	
+	EXPECT_STREQ(StringTwo.c_str(), StringTwo.c_str());
+    EXPECT_STREQ(StringTwo.c_str(), "Hello");
+}
+
+TEST(TestCopyOperator, NullptrCopy)
+{
+        technikum::string StringOne;
+
+        technikum::string StringTwo = StringOne;
+
+        EXPECT_STREQ(StringTwo.c_str(), StringTwo.c_str());
+}
+
+// move constructor
+TEST(TestMove, SimpleMoveConstructor)
+{
+        technikum::string StringOne("Hello");
+
+        technikum::string StringTwo = std::move(StringOne);
+
+		EXPECT_STREQ(StringTwo.c_str(), "Hello");
+        EXPECT_STREQ(StringOne.c_str(), "");
+}
+
+TEST(TestMove, SimpleMove)
+{
+        technikum::string StringOne("Hello");
+
+        technikum::string StringTwo(" World");
+
+		StringTwo = std::move(StringOne);
+
+        EXPECT_STREQ(StringTwo.c_str(), "Hello");
+        EXPECT_STREQ(StringOne.c_str(), "");
+}
+
+TEST(TestMove, SimpleMoveNullptr)
+{
+        technikum::string StringOne;
+
+        technikum::string StringTwo(" World");
+
+        StringTwo = std::move(StringOne);
+
+        EXPECT_STREQ(StringTwo.c_str(), "");
+        EXPECT_STREQ(StringOne.c_str(), "");
+}
+
 TEST(TestAppend, SimpleAppend)
 {
 	  technikum::string OurString("Hello ");

@@ -19,7 +19,7 @@ namespace technikum
                 static char* AddToExistingCharArray(
                     char* firstCharArray, 
                     const char* secondCharArray, 
-                    const char lengthOTotalCharArray,
+                    const int lengthOTotalCharArray,
                     const int offset);
                 // reallocates two charsArrays into one
                 static char* MergeTwoCharArrays(const char* firstCharArray, const char* secondCharArray);
@@ -31,8 +31,17 @@ namespace technikum
                 // constructor with parameters
                 string(const char* charArray);
 
-                // copyconstructor
+                // copy constructor
                 string(const string& other);
+
+                // copy assignment operator
+                string& operator=(const string& other);
+
+                // move constructor
+                string(string&& other);
+
+                // move assignment operator
+                string& operator=(string&& other);
 
                 // destructor without parameters
                 ~string();

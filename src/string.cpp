@@ -32,6 +32,51 @@ namespace technikum
     c_data = CopyCharArray(other.c_data, i_length);
   }
 
+  string& string::operator=(const string& other)
+  { 
+    if (this == &other) return *this;
+
+    //copy data, lenght and reservedSpace
+    this->c_data = CopyCharArray(other.c_data, other.s_reservedSpace);
+    this->i_length = other.i_length;
+    this->s_reservedSpace = other.s_reservedSpace;
+    return *this;
+  }
+
+  // move constructor
+  string::string(string&& other)
+  {
+    if (this == &other) return;
+
+    this->c_data = other.c_data;
+    this->i_length = other.i_length;
+    this->s_reservedSpace = other.s_reservedSpace;
+
+    other.c_data = nullptr;
+    other.i_length = 0;
+    other.s_reservedSpace = 0;
+  }
+
+  // move assignment
+  string& string::operator=(string&& other)
+  {
+    if (this == &other)
+      return *this;
+
+
+    delete[] c_data;
+
+    this->c_data = other.c_data;
+    this->i_length = other.i_length;
+    this->s_reservedSpace = other.s_reservedSpace;
+
+    other.c_data = nullptr;
+    other.i_length = 0;
+    other.s_reservedSpace = 0;
+
+    return *this;
+  }
+
   string::~string()
   {
     delete[] c_data;
@@ -158,7 +203,7 @@ namespace technikum
   char* string::AddToExistingCharArray(
       char* firstCharArray,
       const char* secondCharArray,
-      const char lengthOTotalCharArray,
+      const int lengthOTotalCharArray,
       const int offset)
   {
     for (int i = 0; i < lengthOTotalCharArray && secondCharArray[i] != '\0'; ++i)
