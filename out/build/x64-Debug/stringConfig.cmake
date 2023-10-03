@@ -26,7 +26,7 @@ endmacro()
 
 ####################################################################################
 
-set_and_check(string_INCLUDE_DIR "C:/Users/FuxiK/Source/Repos/OurString/out/install/x64-Debug/include")
+set_and_check(string_INCLUDE_DIR "C:/Users/wisdom/Source/Repos/OurString/out/install/x64-Debug/include")
 
 include("${CMAKE_CURRENT_LIST_DIR}/stringTargets.cmake")
 

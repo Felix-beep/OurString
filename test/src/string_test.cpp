@@ -301,3 +301,96 @@ TEST(TestNullptr, AppendSecond)
     EXPECT_EQ(StringOne.size(), StdStringOne.size());
     EXPECT_LE(StringOne.capacity(), StdStringOne.capacity());
 }
+
+TEST(TestPlusEqualOperator, SimplePlusEquals)
+{
+    technikum::string StringOne = "Hello ";
+    technikum::string StringTwo = "World";
+
+	StringOne += StringTwo;
+
+	EXPECT_STREQ(StringOne.c_str(), "Hello World");
+    EXPECT_EQ(StringOne.length(), 11);
+}
+
+TEST(TestPlusEqualOperator, PlusEqualsDoesNotChangeSource)
+{
+	technikum::string StringOne = "Hello ";
+	technikum::string StringTwo = "World";
+
+	StringTwo += StringOne;
+
+	EXPECT_STREQ(StringOne.c_str(), "Hello ");
+}
+
+TEST(TestPlusOperator, SimplePlus)
+{
+	technikum::string StringOne = "Hello ";
+	technikum::string StringTwo = "World";
+	technikum::string StringThree;
+
+	StringThree = StringOne + StringTwo;
+
+	EXPECT_STREQ(StringThree.c_str(), "Hello World");
+	EXPECT_EQ(StringThree.length(), 11);
+}
+
+TEST(TestPlusOperator, PlusString)
+{
+	technikum::string StringOne = "Hello ";
+	technikum::string StringTwo;
+
+	StringTwo = StringOne + "World";
+
+	EXPECT_STREQ(StringTwo.c_str(), "Hello World");
+	EXPECT_EQ(StringTwo.length(), 11);
+}
+
+TEST(TestPlusOperator, PlusDoesNotChangeSource)
+{
+	technikum::string StringOne = "Hello ";
+	technikum::string StringTwo;
+	StringTwo = StringOne + "World";
+
+	EXPECT_STREQ(StringOne.c_str(), "Hello ");
+}
+
+TEST(TestPlusEqualOperator, PlusEqualString)
+{
+	technikum::string StringOne = "Hello ";
+	StringOne += "World";
+
+	EXPECT_STREQ(StringOne.c_str(), "Hello World");
+	EXPECT_EQ(StringOne.length(), 11);
+}
+
+TEST(TestPlusIntOperator, PlusInt)
+{
+        technikum::string StringOne = "Hello ";
+        technikum::string StringTwo;
+
+        StringTwo = StringOne + 15;
+
+        EXPECT_STREQ(StringTwo.c_str(), "Hello 15");
+        EXPECT_EQ(StringTwo.length(), 8);
+}
+
+TEST(TestPlusEqualIntOperator, PlusEqualInt)
+{
+        technikum::string StringOne = "Hello ";
+
+        StringOne += 15;
+
+        EXPECT_STREQ(StringOne.c_str(), "Hello 15");
+        EXPECT_EQ(StringOne.length(), 8);
+}
+
+TEST(TestPuts, SimplePuts)
+{
+	technikum::string StringOne = "Hello World";
+
+	int Success = puts(StringOne);
+
+	EXPECT_NE(Success, EOF);
+	EXPECT_GE(Success, 0);
+}

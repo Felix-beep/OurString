@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-src"
-  "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-build"
-  "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix"
-  "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/tmp"
-  "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
-  "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src"
-  "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
+  "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/_deps/googletest-src"
+  "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/_deps/googletest-build"
+  "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix"
+  "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/tmp"
+  "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
+  "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src"
+  "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

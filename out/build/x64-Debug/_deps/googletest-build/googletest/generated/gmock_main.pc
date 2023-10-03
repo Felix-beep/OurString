@@ -1,5 +1,5 @@
-libdir=C:/Users/FuxiK/Source/Repos/OurString/out/install/x64-Debug/lib
-includedir=C:/Users/FuxiK/Source/Repos/OurString/out/install/x64-Debug/include
+libdir=C:/Users/wisdom/Source/Repos/OurString/out/install/x64-Debug/lib
+includedir=C:/Users/wisdom/Source/Repos/OurString/out/install/x64-Debug/include
 
 Name: gmock_main
 Description: GoogleMock (with main() function)

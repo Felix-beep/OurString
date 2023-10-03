@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/FuxiK/source/repos/OurString
+# Install script for directory: C:/Users/wisdom/source/repos/OurString
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/FuxiK/Source/Repos/OurString/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/wisdom/Source/Repos/OurString/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,14 +33,14 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/lib/Debug/string.lib")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/lib/Debug/string.lib")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/string/stringTargets.cmake")
     file(DIFFERENT _cmake_export_file_changed FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/string/stringTargets.cmake"
-         "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/CMakeFiles/Export/5d8e1d1478a0589079b5955a1059c1d4/stringTargets.cmake")
+         "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/CMakeFiles/Export/5d8e1d1478a0589079b5955a1059c1d4/stringTargets.cmake")
     if(_cmake_export_file_changed)
       file(GLOB _cmake_old_config_files "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/string/stringTargets-*.cmake")
       if(_cmake_old_config_files)
@@ -53,30 +53,30 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     endif()
     unset(_cmake_export_file_changed)
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/string" TYPE FILE FILES "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/CMakeFiles/Export/5d8e1d1478a0589079b5955a1059c1d4/stringTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/string" TYPE FILE FILES "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/CMakeFiles/Export/5d8e1d1478a0589079b5955a1059c1d4/stringTargets.cmake")
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/string" TYPE FILE FILES "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/CMakeFiles/Export/5d8e1d1478a0589079b5955a1059c1d4/stringTargets-debug.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/string" TYPE FILE FILES "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/CMakeFiles/Export/5d8e1d1478a0589079b5955a1059c1d4/stringTargets-debug.cmake")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/string" TYPE FILE FILES "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/include/string/version.hpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/string" TYPE FILE FILES "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/include/string/version.hpp")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "C:/Users/FuxiK/source/repos/OurString/include/string")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "C:/Users/wisdom/source/repos/OurString/include/string")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/string" TYPE FILE FILES
-    "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/stringConfig.cmake"
-    "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/stringConfigVersion.cmake"
+    "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/stringConfig.cmake"
+    "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/stringConfigVersion.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/test/cmake_install.cmake")
+  include("C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/test/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -87,5 +87,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/FuxiK/source/repos/OurString/out/build/x64-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/wisdom/source/repos/OurString/out/build/x64-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

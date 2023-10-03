@@ -82,6 +82,82 @@ namespace technikum
     delete[] c_data;
   }
 
+  string string::operator+(const string& other) const 
+  {
+    string newString(*this);
+
+    newString.append(other.c_str());
+
+    return newString;
+  }
+
+  string string::operator+(const int& other) const
+  {
+    string newString(*this);
+
+    int CopyInt = other;
+    int length = 1;
+    while (abs(CopyInt) > 10)
+    {
+        CopyInt = CopyInt / 10;
+        ++length;
+    }
+
+    char* NewCharArray = new char[length];
+
+    CopyInt = other;
+    --length;
+    while (length >= 0)
+    {
+        NewCharArray[length] = (char)(CopyInt % 10);
+        CopyInt = CopyInt / 10;
+    }
+
+    newString.append(NewCharArray);
+
+    delete[] NewCharArray;
+
+    return newString;
+  }
+
+  string& string::operator+=(const string& other)
+  {
+    (*this).append(other.c_str());
+    return *this;
+  }
+
+  string& string::operator+=(const int& other) 
+  {
+    int CopyInt = other;
+    int length = 1;
+    while (abs(CopyInt) > 10)
+    {
+        CopyInt = CopyInt / 10;
+        ++length;
+    }
+
+    char* NewCharArray = new char[length];
+
+    CopyInt = other;
+    --length;
+    while (length >= 0)
+    {
+        NewCharArray[length] = (char)(CopyInt % 10);
+        CopyInt = CopyInt / 10;
+    }
+
+    (*this).append(NewCharArray);
+
+    delete[] NewCharArray;
+
+    return *this;
+  }
+
+  string::operator const char*() const
+  {
+    return (*this).c_data;
+  }
+
   technikum::string string::append(const char* charArray)
   {
     // get length of the charArray

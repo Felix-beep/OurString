@@ -46,6 +46,21 @@ namespace technikum
                 // destructor without parameters
                 ~string();
 
+                // overload + operator
+                string operator+(const string& other) const;
+
+                // overload + operator : adding int to string
+                string operator+(const int& other) const;
+
+                // overload += operator
+                string& operator+=(const string& other);
+
+                // overload += operator : adding int to string
+                string& operator+=(const int& other) ;
+
+                // cast to char*
+                operator const char*() const;
+
                 // adds a char array to the currently saved char crray
                 string append(const char* charArray);
 
