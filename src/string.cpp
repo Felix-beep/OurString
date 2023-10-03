@@ -95,22 +95,29 @@ namespace technikum
   {
     string newString(*this);
 
-    int CopyInt = other;
+    int CopyInt = abs(other);
     int length = 1;
-    while (abs(CopyInt) > 10)
+    while (CopyInt > 10)
     {
-        CopyInt = CopyInt / 10;
-        ++length;
+      CopyInt = CopyInt / 10;
+      length++;
     }
 
-    char* NewCharArray = new char[length];
+    char* NewCharArray = new char[length + 1];
+    NewCharArray[length] = '\0';
 
-    CopyInt = other;
-    --length;
+    CopyInt = abs(other);
+    length--;
     while (length >= 0)
     {
-        NewCharArray[length] = (char)(CopyInt % 10);
-        CopyInt = CopyInt / 10;
+      NewCharArray[length] = '0' + (CopyInt % 10);
+      CopyInt = CopyInt / 10;
+      length--;
+    }
+
+    if (other < 0)
+    {
+      newString.append("-");
     }
 
     newString.append(NewCharArray);
@@ -128,22 +135,29 @@ namespace technikum
 
   string& string::operator+=(const int& other) 
   {
-    int CopyInt = other;
+    int CopyInt = abs(other);
     int length = 1;
-    while (abs(CopyInt) > 10)
+    while (CopyInt > 10)
     {
         CopyInt = CopyInt / 10;
-        ++length;
+        length++;
     }
 
-    char* NewCharArray = new char[length];
+    char* NewCharArray = new char[length + 1];
+    NewCharArray[length] = '\0';
 
-    CopyInt = other;
-    --length;
+    CopyInt = abs(other);
+    length--;
     while (length >= 0)
     {
-        NewCharArray[length] = (char)(CopyInt % 10);
+        NewCharArray[length] = '0' + (CopyInt % 10);
         CopyInt = CopyInt / 10;
+        length--;
+    }
+
+    if (other < 0)
+    {
+        (*this).append("-");
     }
 
     (*this).append(NewCharArray);

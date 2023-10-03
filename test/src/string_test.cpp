@@ -369,10 +369,32 @@ TEST(TestPlusIntOperator, PlusInt)
         technikum::string StringOne = "Hello ";
         technikum::string StringTwo;
 
-        StringTwo = StringOne + 15;
+        StringTwo = StringOne + 11245;
 
-        EXPECT_STREQ(StringTwo.c_str(), "Hello 15");
-        EXPECT_EQ(StringTwo.length(), 8);
+        EXPECT_STREQ(StringTwo.c_str(), "Hello 11245");
+        EXPECT_EQ(StringTwo.length(), 11);
+}
+
+TEST(TestPlusIntOperator, PlusIntZero)
+{
+        technikum::string StringOne = "Hello ";
+        technikum::string StringTwo;
+
+        StringTwo = StringOne + 0;
+
+        EXPECT_STREQ(StringTwo.c_str(), "Hello 0");
+        EXPECT_EQ(StringTwo.length(), 7);
+}
+
+TEST(TestPlusIntOperator, PlusNegativeInt)
+{
+        technikum::string StringOne = "Hello ";
+        technikum::string StringTwo;
+
+        StringTwo = StringOne + (-15);
+
+        EXPECT_STREQ(StringTwo.c_str(), "Hello -15");
+        EXPECT_EQ(StringTwo.length(), 9);
 }
 
 TEST(TestPlusEqualIntOperator, PlusEqualInt)
@@ -382,6 +404,16 @@ TEST(TestPlusEqualIntOperator, PlusEqualInt)
         StringOne += 15;
 
         EXPECT_STREQ(StringOne.c_str(), "Hello 15");
+        EXPECT_EQ(StringOne.length(), 8);
+}
+
+TEST(TestPlusEqualIntOperator, PlusEqualNegativeInt)
+{
+        technikum::string StringOne = "Hello ";
+
+        StringOne += -3;
+
+        EXPECT_STREQ(StringOne.c_str(), "Hello -3");
         EXPECT_EQ(StringOne.length(), 8);
 }
 
