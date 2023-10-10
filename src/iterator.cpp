@@ -15,7 +15,7 @@ namespace technikum
 
     iterator::~iterator()
     {
-        delete currentIndex;
+        
     }
 
     char& iterator::operator*() const
