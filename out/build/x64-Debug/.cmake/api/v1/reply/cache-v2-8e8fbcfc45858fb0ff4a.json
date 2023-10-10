@@ -147,10 +147,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "D:/VS2022/VS/VC/Tools/MSVC/14.36.32532/bin/Hostx64/x64/cl.exe"
 		},
 		{
@@ -1632,6 +1632,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "922ed32d3d946d60d2317df25b014264"
+		},
+		{
+			"name" : "_Python_Interpreter_REASON_FAILURE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Interpreter reason failure"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
 		},
 		{
 			"name" : "_Python_NumPy_REASON_FAILURE",

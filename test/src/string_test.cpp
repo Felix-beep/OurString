@@ -1,7 +1,10 @@
 #include "technikumSTL/string.h"
+#include "technikumSTL/iterator.h"
 
 #include <gtest/gtest.h>
 #include <string.h>
+#include <algorithm>
+
 
 TEST(TestConstructor, SimpleString)
 {
@@ -419,10 +422,122 @@ TEST(TestPlusEqualIntOperator, PlusEqualNegativeInt)
 
 TEST(TestPuts, SimplePuts)
 {
-	technikum::string StringOne = "Hello World";
+		technikum::string StringOne = "Hello World";
 
-	int Success = puts(StringOne);
+		int Success = puts(StringOne);
 
-	EXPECT_NE(Success, EOF);
-	EXPECT_GE(Success, 0);
+		EXPECT_NE(Success, EOF);
+		EXPECT_GE(Success, 0);
+}
+
+TEST(TestBegin, SimpleBegin)
+{
+		technikum::string StringOne = "Hello World";
+		technikum::iterator Iterator = StringOne.begin();
+
+
+		EXPECT_EQ(*Iterator, 'H');
+}
+
+TEST(TestBegin, IncrementBegin)
+{
+        technikum::string StringOne = "Hello World";
+        technikum::iterator Iterator = StringOne.end();
+
+        EXPECT_EQ(*Iterator, '\0');
+}
+
+TEST(TestIterator, IteratorCreation)
+{
+		technikum::string StringOne = "Hello World";
+		technikum::iterator IteratorOne = StringOne.begin();
+
+        EXPECT_EQ(StringOne.begin(), IteratorOne);
+		EXPECT_EQ(*IteratorOne, 'H');
+}
+
+
+TEST(TestIterator, ViaArrow)
+{
+		technikum::string StringOne = "Hello World";
+		technikum::iterator IteratorOne = StringOne.begin();
+
+		EXPECT_EQ(*(IteratorOne.operator->()), 'H');
+}
+
+TEST(TestIterator, IteratorIncrement)
+{
+		technikum::string StringOne = "Hello World";
+		technikum::iterator IteratorOne = StringOne.begin();
+		++IteratorOne;
+
+		EXPECT_EQ(*IteratorOne, 'e');
+}
+
+TEST(TestIterator, IteratorDecrement)
+{
+        technikum::string StringOne = "Hello World";
+        technikum::iterator IteratorOne = StringOne.end();
+        --IteratorOne;
+
+        EXPECT_EQ(*IteratorOne, 'd');
+}
+
+
+TEST(TestIterator, SimpleEqual)
+{	
+		technikum::string StringOne = "Hello World";
+        technikum::iterator IteratorOne = StringOne.begin();
+        technikum::iterator IteratorTwo = StringOne.begin();
+
+		EXPECT_TRUE(IteratorOne == IteratorTwo);
+}
+
+TEST(TestIterator, DoesNotEqual)
+{
+		technikum::string StringOne = "Hello World";
+		technikum::iterator IteratorOne = StringOne.begin();
+		technikum::string StringTwo = "Hallo Welt";
+		technikum::iterator IteratorTwo = StringTwo.begin();
+		
+		EXPECT_FALSE(IteratorOne == IteratorTwo);
+}
+
+TEST(TestIterator, SimpleNotEqual)
+{
+		technikum::string StringOne = "Hello World";
+		technikum::iterator IteratorOne = StringOne.begin();
+		technikum::string StringTwo = "Hallo Welt";
+		technikum::iterator IteratorTwo = StringTwo.begin();
+
+		EXPECT_TRUE(IteratorOne != IteratorTwo);
+}
+
+TEST(TestIterator, DoesEqual)
+{
+		technikum::string StringOne = "Hello World";
+		technikum::iterator IteratorOne = StringOne.begin();
+		technikum::iterator IteratorTwo = StringOne.begin();
+
+		EXPECT_FALSE(IteratorOne != IteratorTwo);
+}
+
+TEST(TestIterator, SimpleFind)
+{
+		technikum::string StringOne = "Hello World";
+		
+		technikum::iterator result = std::find(StringOne.begin(), StringOne.end(), 'o');
+
+		EXPECT_TRUE(result != StringOne.end()); //should not reach the end
+		EXPECT_TRUE(*result == 'o');
+}
+
+TEST(TestIterator, SimpleCanNotFind)
+{
+        technikum::string StringOne = "Hello World";
+
+        technikum::iterator result = std::find(StringOne.begin(), StringOne.end(), 'z');
+
+        EXPECT_TRUE(result == StringOne.end());  
+		EXPECT_FALSE(*result == 'z');
 }

@@ -95,7 +95,7 @@ else()
     ${PROJECT_NAME}
     ${headers}
     ${sources}
-  )
+   "include/technikumSTL/iterator.h" "src/iterator.cpp")
 
   if(${PROJECT_NAME}_VERBOSE_OUTPUT)
     verbose_message("Found the following sources:")

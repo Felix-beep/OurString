@@ -4,6 +4,8 @@
 
 namespace technikum
 {
+      class iterator;
+
       class string
       {
            private:
@@ -14,7 +16,7 @@ namespace technikum
                 // returns the length of a charArray
                 static int GetLength(const char* charArray);
                 // reserves a X long Array and then copies charArray into it - lengthOfArray can be bigger than charArray
-                static char* CopyCharArray(const char* charArray, const char lengthOfArray);
+                static char* CopyCharArray(const char* charArray, const int lengthOfArray);
                 // adds a secondCharArray to the firstCharArray without reallocating
                 static char* AddToExistingCharArray(
                     char* firstCharArray, 
@@ -56,7 +58,7 @@ namespace technikum
                 string& operator+=(const string& other);
 
                 // overload += operator : adding int to string
-                string& operator+=(const int& other) ;
+                string& operator+=(const int& other);
 
                 // cast to char*
                 operator const char*() const;
@@ -70,6 +72,12 @@ namespace technikum
                 // returns the reserved size for the array.
                 // capacity here is equal to how many characters can be saved in the array.
                 size_t capacity() const;
+
+                // returns pointer to first element
+                iterator& begin() const;
+
+                // returns pointer to last element
+                iterator& end() const;
 
                 // returns the length of the string without "\0"
                 int length() const; /* make it const by adding const behind length */

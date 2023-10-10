@@ -1,5 +1,5 @@
 #include "technikumSTL/string.h"
-
+#include "technikumSTL/iterator.h"
 
 namespace technikum
 {
@@ -37,7 +37,7 @@ namespace technikum
     if (this == &other) return *this;
 
     //copy data, lenght and reservedSpace
-    this->c_data = CopyCharArray(other.c_data, other.s_reservedSpace);
+    this->c_data = CopyCharArray(other.c_data, (int)other.s_reservedSpace);
     this->i_length = other.i_length;
     this->s_reservedSpace = other.s_reservedSpace;
     return *this;
@@ -225,7 +225,7 @@ namespace technikum
     char* NewCharArray;
 
     // copy c_data to the a new place
-    NewCharArray = CopyCharArray(c_data, LengthToReserve);
+    NewCharArray = CopyCharArray(c_data, (int)LengthToReserve);
 
     // delete the old c_data
     delete[] c_data;
@@ -238,6 +238,16 @@ namespace technikum
   size_t string::capacity() const
   {
     return s_reservedSpace;
+  }
+
+  iterator& string::begin() const
+  { 
+    return *(new iterator(c_data));
+  }
+
+  iterator& string::end() const
+  {
+    return *(new iterator(c_data + i_length));
   }
 
   int string::length() const
@@ -273,7 +283,7 @@ namespace technikum
     return result;
   }
 
-  char* string::CopyCharArray(const char* charArray, const char lengthOfArray)
+  char* string::CopyCharArray(const char* charArray, const int lengthOfArray)
   {
     if (charArray == nullptr)
       return nullptr;
