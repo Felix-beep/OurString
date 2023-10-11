@@ -8,7 +8,7 @@ namespace technikum
 {
   class string;
 
-  class iterator 
+  class iterator : public std::iterator<std::random_access_iterator_tag, char>
   {
 		private:
 			char* currentIndex;

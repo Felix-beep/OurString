@@ -521,7 +521,6 @@ TEST(TestIterator, DoesEqual)
 
 		EXPECT_FALSE(IteratorOne != IteratorTwo);
 }
-/*
 
 TEST(TestIterator, SimpleFind)
 {
@@ -541,4 +540,4 @@ TEST(TestIterator, SimpleCanNotFind)
 
         EXPECT_TRUE(result == StringOne.end());  
 		EXPECT_FALSE(*result == 'z');
-}*/
+}
