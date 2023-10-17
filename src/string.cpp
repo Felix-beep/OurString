@@ -79,7 +79,7 @@ namespace technikum
 
   string::~string()
   {
-    delete[] c_data;
+      delete[] c_data;
   }
 
   string string::operator+(const string& other) const 

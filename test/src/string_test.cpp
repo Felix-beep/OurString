@@ -1,5 +1,6 @@
 #include "technikumSTL/string.h"
 #include "technikumSTL/iterator.h"
+#include "technikumSTL/uniquePtr.h"
 
 #include <gtest/gtest.h>
 #include <string.h>
@@ -110,135 +111,135 @@ TEST(TestMove, SimpleMoveNullptr)
 
 TEST(TestAppend, SimpleAppend)
 {
-	  technikum::string OurString("Hello ");
+		technikum::string OurString("Hello ");
 
-	  OurString.append("World");
+		OurString.append("World");
 
-	  ASSERT_STREQ(OurString.c_str(), "Hello World");
+		ASSERT_STREQ(OurString.c_str(), "Hello World");
 }
 
 TEST(TestAppend, ComparedToStdString)
 {
-	  std::string StdString("Hello ");
-	  technikum::string OurString("Hello ");
+		std::string StdString("Hello ");
+		technikum::string OurString("Hello ");
 
-	  StdString.append("World");
-	  OurString.append("World");
+		StdString.append("World");
+		OurString.append("World");
 
-	  ASSERT_STREQ(OurString.c_str(), StdString.c_str());
+		ASSERT_STREQ(OurString.c_str(), StdString.c_str());
 }
 
 TEST(TestLength, SimpleLength)
 {
-	  technikum::string OurString("Hello World");
+		technikum::string OurString("Hello World");
 
-	  ASSERT_EQ(OurString.length(), 11);
+		ASSERT_EQ(OurString.length(), 11);
 }
 
 TEST(TestLength, ComparedToStdString)
 {
-	  std::string StdString("Hello World");
-	  technikum::string OurString("Hello World");
+		std::string StdString("Hello World");
+		technikum::string OurString("Hello World");
 
-	  ASSERT_EQ(OurString.length(), StdString.length());
+		ASSERT_EQ(OurString.length(), StdString.length());
 }
 
 TEST(TestLength, LengthAfterAppend)
 {
-	  std::string StdString("Hello ");
-	  technikum::string OurString("Hello ");
+		std::string StdString("Hello ");
+		technikum::string OurString("Hello ");
 
-	  StdString.append("World");
-	  OurString.append("World");
+		StdString.append("World");
+		OurString.append("World");
 
-	  ASSERT_EQ(OurString.length(), StdString.length());
+		ASSERT_EQ(OurString.length(), StdString.length());
 }
 
 TEST(TestReserve, SimpleReserve)
 {
-	  const int SpaceToReserve = 11;
+		const int SpaceToReserve = 11;
 
-	  technikum::string OurString;
+		technikum::string OurString;
 
-	  OurString.reserve(SpaceToReserve);
+		OurString.reserve(SpaceToReserve);
 
-	  ASSERT_EQ(OurString.capacity(), SpaceToReserve);
+		ASSERT_EQ(OurString.capacity(), SpaceToReserve);
 }
 
 TEST(TestReserve, SimpleReserveComparedToStd)
 {
-	  const int SpaceToReserve = 11;
+		const int SpaceToReserve = 11;
 
-	  technikum::string OurString;
-	  std::string StdString;
+		technikum::string OurString;
+		std::string StdString;
 
-	  OurString.reserve(SpaceToReserve);
-	  StdString.reserve(SpaceToReserve);
+		OurString.reserve(SpaceToReserve);
+		StdString.reserve(SpaceToReserve);
 
-	  // less or equal
-	  // std takes more memory space
-	  ASSERT_LE(OurString.capacity(), StdString.capacity());
+		// less or equal
+		// std takes more memory space
+		ASSERT_LE(OurString.capacity(), StdString.capacity());
 }
 
 TEST(TestReserve, ReserveWithAppendBelowLimit)
 {
-	  const char* Sentence = "Hello";
+		const char* Sentence = "Hello";
 
-	  technikum::string ALovelyString(Sentence);
+		technikum::string ALovelyString(Sentence);
 
-	  ALovelyString.reserve(12);  // Zeichenanzahl Hello World ohne /0
+		ALovelyString.reserve(12);  // Zeichenanzahl Hello World ohne /0
 
-	  ALovelyString.append(" World");
+		ALovelyString.append(" World");
 
-	  EXPECT_STREQ(ALovelyString.c_str(), "Hello World");
-	  EXPECT_EQ(ALovelyString.capacity(), 12);
+		EXPECT_STREQ(ALovelyString.c_str(), "Hello World");
+		EXPECT_EQ(ALovelyString.capacity(), 12);
 }
 
 TEST(TestReserve, ReserveWithAppendAboveLimit)
 {
-	  const char* Sentence = "Hello";
+		const char* Sentence = "Hello";
 
-	  technikum::string ALovelyString(Sentence);
+		technikum::string ALovelyString(Sentence);
 
-	  ALovelyString.reserve(7);  // Zeichenanzahl Hello World ohne /0
+		ALovelyString.reserve(7);  // Zeichenanzahl Hello World ohne /0
 
-	  ALovelyString.append(" World");
+		ALovelyString.append(" World");
 
-	  EXPECT_STREQ(ALovelyString.c_str(), "Hello World");
-	  EXPECT_EQ(ALovelyString.capacity(), 11);
+		EXPECT_STREQ(ALovelyString.c_str(), "Hello World");
+		EXPECT_EQ(ALovelyString.capacity(), 11);
 }
 
 TEST(TestCapacity, SimpleCapacity)
 {
-	  const char* Sentence = "Hello";
+		const char* Sentence = "Hello";
 
-	  technikum::string ALovelyString(Sentence);
+		technikum::string ALovelyString(Sentence);
 
-	  ASSERT_EQ(ALovelyString.capacity(), 5);
+		ASSERT_EQ(ALovelyString.capacity(), 5);
 }
 
 TEST(TestCapacity, CapacityWithAppend)
 {
-	  const char* Sentence = "Hello";
+		const char* Sentence = "Hello";
 
-	  technikum::string ALovelyString(Sentence);
+		technikum::string ALovelyString(Sentence);
 
-	  ALovelyString.append(" World");
+		ALovelyString.append(" World");
 
-	  ASSERT_EQ(ALovelyString.capacity(), 11);
+		ASSERT_EQ(ALovelyString.capacity(), 11);
 }
 
 TEST(TestCapacity, ComparedToStdString)
 {
-	std::string StdString("Hello ");
-	technikum::string OurString("Hello ");
+		std::string StdString("Hello ");
+		technikum::string OurString("Hello ");
 
-	StdString.append("World");
-	OurString.append("World");
+		StdString.append("World");
+		OurString.append("World");
 
-	// less or equal
-	// std takes more memory space
-	EXPECT_LE(OurString.capacity(), StdString.capacity());
+		// less or equal
+		// std takes more memory space
+		EXPECT_LE(OurString.capacity(), StdString.capacity());
 }
 
 TEST(TestNullptr, Constructor)
@@ -253,118 +254,118 @@ TEST(TestNullptr, Constructor)
 
 TEST(TestNullptr, Append)
 {
-    technikum::string StringOne;
-    technikum::string StringTwo;
+		technikum::string StringOne;
+		technikum::string StringTwo;
 
-    StringOne.append(StringTwo.c_str());
+		StringOne.append(StringTwo.c_str());
 
-    std::string StdStringOne;
-    std::string StdStringTwo;
+		std::string StdStringOne;
+		std::string StdStringTwo;
 
-    StdStringOne.append(StdStringTwo.c_str());
+		StdStringOne.append(StdStringTwo.c_str());
 
-    EXPECT_STREQ(StringOne.c_str(), StdStringOne.c_str());
-    EXPECT_EQ(StringOne.length(), StdStringOne.length());
-    EXPECT_EQ(StringOne.size(), StdStringOne.size());
-    EXPECT_LE(StringOne.capacity(), StdStringOne.capacity());
+		EXPECT_STREQ(StringOne.c_str(), StdStringOne.c_str());
+		EXPECT_EQ(StringOne.length(), StdStringOne.length());
+		EXPECT_EQ(StringOne.size(), StdStringOne.size());
+		EXPECT_LE(StringOne.capacity(), StdStringOne.capacity());
 }
 
 TEST(TestNullptr, AppendFirst)
 {
-    technikum::string StringOne("Hello ");
-    technikum::string StringTwo;
+		technikum::string StringOne("Hello ");
+		technikum::string StringTwo;
 
-    StringOne.append(StringTwo.c_str());
+		StringOne.append(StringTwo.c_str());
 
-    std::string StdStringOne("Hello ");
-    std::string StdStringTwo;
+		std::string StdStringOne("Hello ");
+		std::string StdStringTwo;
 
-    StdStringOne.append(StdStringTwo.c_str());
+		StdStringOne.append(StdStringTwo.c_str());
 
-    EXPECT_STREQ(StringOne.c_str(), StdStringOne.c_str());
-    EXPECT_EQ(StringOne.length(), StdStringOne.length());
-    EXPECT_EQ(StringOne.size(), StdStringOne.size());
-    EXPECT_LE(StringOne.capacity(), StdStringOne.capacity());
+		EXPECT_STREQ(StringOne.c_str(), StdStringOne.c_str());
+		EXPECT_EQ(StringOne.length(), StdStringOne.length());
+		EXPECT_EQ(StringOne.size(), StdStringOne.size());
+		EXPECT_LE(StringOne.capacity(), StdStringOne.capacity());
 }
 
 TEST(TestNullptr, AppendSecond)
 {
-    technikum::string StringOne;
-    technikum::string StringTwo("World");
+		technikum::string StringOne;
+		technikum::string StringTwo("World");
 
-    StringOne.append(StringTwo.c_str());
+		StringOne.append(StringTwo.c_str());
 
-	std::string StdStringOne;
-    std::string StdStringTwo("World");
+		std::string StdStringOne;
+		std::string StdStringTwo("World");
 
-    StdStringOne.append(StdStringTwo.c_str());
+		StdStringOne.append(StdStringTwo.c_str());
 
-    EXPECT_STREQ(StringOne.c_str(), StdStringOne.c_str());
-    EXPECT_EQ(StringOne.length(), StdStringOne.length());
-    EXPECT_EQ(StringOne.size(), StdStringOne.size());
-    EXPECT_LE(StringOne.capacity(), StdStringOne.capacity());
+		EXPECT_STREQ(StringOne.c_str(), StdStringOne.c_str());
+		EXPECT_EQ(StringOne.length(), StdStringOne.length());
+		EXPECT_EQ(StringOne.size(), StdStringOne.size());
+		EXPECT_LE(StringOne.capacity(), StdStringOne.capacity());
 }
 
 TEST(TestPlusEqualOperator, SimplePlusEquals)
 {
-    technikum::string StringOne = "Hello ";
-    technikum::string StringTwo = "World";
+		technikum::string StringOne = "Hello ";
+		technikum::string StringTwo = "World";
 
-	StringOne += StringTwo;
+		StringOne += StringTwo;
 
-	EXPECT_STREQ(StringOne.c_str(), "Hello World");
-    EXPECT_EQ(StringOne.length(), 11);
+		EXPECT_STREQ(StringOne.c_str(), "Hello World");
+		EXPECT_EQ(StringOne.length(), 11);
 }
 
 TEST(TestPlusEqualOperator, PlusEqualsDoesNotChangeSource)
 {
-	technikum::string StringOne = "Hello ";
-	technikum::string StringTwo = "World";
+		technikum::string StringOne = "Hello ";
+		technikum::string StringTwo = "World";
 
-	StringTwo += StringOne;
+		StringTwo += StringOne;
 
-	EXPECT_STREQ(StringOne.c_str(), "Hello ");
+		EXPECT_STREQ(StringOne.c_str(), "Hello ");
 }
 
 TEST(TestPlusOperator, SimplePlus)
 {
-	technikum::string StringOne = "Hello ";
-	technikum::string StringTwo = "World";
-	technikum::string StringThree;
+		technikum::string StringOne = "Hello ";
+		technikum::string StringTwo = "World";
+		technikum::string StringThree;
 
-	StringThree = StringOne + StringTwo;
+		StringThree = StringOne + StringTwo;
 
-	EXPECT_STREQ(StringThree.c_str(), "Hello World");
-	EXPECT_EQ(StringThree.length(), 11);
+		EXPECT_STREQ(StringThree.c_str(), "Hello World");
+		EXPECT_EQ(StringThree.length(), 11);
 }
 
 TEST(TestPlusOperator, PlusString)
 {
-	technikum::string StringOne = "Hello ";
-	technikum::string StringTwo;
+		technikum::string StringOne = "Hello ";
+		technikum::string StringTwo;
 
-	StringTwo = StringOne + "World";
+		StringTwo = StringOne + "World";
 
-	EXPECT_STREQ(StringTwo.c_str(), "Hello World");
-	EXPECT_EQ(StringTwo.length(), 11);
+		EXPECT_STREQ(StringTwo.c_str(), "Hello World");
+		EXPECT_EQ(StringTwo.length(), 11);
 }
 
 TEST(TestPlusOperator, PlusDoesNotChangeSource)
 {
-	technikum::string StringOne = "Hello ";
-	technikum::string StringTwo;
-	StringTwo = StringOne + "World";
+		technikum::string StringOne = "Hello ";
+		technikum::string StringTwo;
+		StringTwo = StringOne + "World";
 
-	EXPECT_STREQ(StringOne.c_str(), "Hello ");
+		EXPECT_STREQ(StringOne.c_str(), "Hello ");
 }
 
 TEST(TestPlusEqualOperator, PlusEqualString)
 {
-	technikum::string StringOne = "Hello ";
-	StringOne += "World";
+		technikum::string StringOne = "Hello ";
+		StringOne += "World";
 
-	EXPECT_STREQ(StringOne.c_str(), "Hello World");
-	EXPECT_EQ(StringOne.length(), 11);
+		EXPECT_STREQ(StringOne.c_str(), "Hello World");
+		EXPECT_EQ(StringOne.length(), 11);
 }
 
 TEST(TestPlusIntOperator, PlusInt)
@@ -540,4 +541,81 @@ TEST(TestIterator, SimpleCanNotFind)
 
         EXPECT_TRUE(result == StringOne.end());  
 		EXPECT_FALSE(*result == 'z');
+}
+
+TEST(TestUniquePtr, SimpleUniquePtr)
+{
+		technikum::unique_ptr<technikum::string> StringPtr(new technikum::string("Hello World"));
+
+		EXPECT_STREQ((*StringPtr).c_str(), "Hello World");
+}
+
+TEST(TestUniquePtr, ResetUniquePtr)
+{
+		technikum::unique_ptr<technikum::string> StringPtr(new technikum::string("Hello World"));
+
+		StringPtr.reset();
+
+		EXPECT_EQ(StringPtr.get(), nullptr);
+}
+
+TEST(TestUniquePtr, ResetUniquePtrWithArgument)
+{
+		technikum::unique_ptr<technikum::string> StringPtr(new technikum::string("Hello World"));
+
+		StringPtr.reset(new technikum::string("Goodbye World"));
+
+		EXPECT_STREQ(*StringPtr, "Goodbye World");
+}
+
+TEST(TestUniquePtr, SimplePointerRelease)
+{
+		technikum::unique_ptr<technikum::string> StringPtr(new technikum::string("Hello World"));
+
+		technikum::string* String = StringPtr.release();
+
+		EXPECT_STREQ(String->c_str(), "Hello World");
+		EXPECT_EQ(StringPtr.get(), nullptr);
+
+		delete String;
+}
+
+TEST(TestUniquePtr, SwapUniquePtrAndPtr)
+{
+		technikum::unique_ptr<technikum::string> StringPtrOne(new technikum::string("Hello World"));
+
+		technikum::string* StringPtr = new technikum::string("Goodbye World");
+
+		StringPtrOne.swap(StringPtr);
+
+		EXPECT_STREQ(*StringPtrOne, "Goodbye World");
+		EXPECT_STREQ(StringPtr->c_str(), "Hello World");
+
+}
+
+TEST(TestUniquePtr, SwapTwoUniquePtrs)
+{
+        technikum::unique_ptr<technikum::string> StringPtrOne(new technikum::string("Hello World"));
+
+        technikum::unique_ptr<technikum::string> StringPtrTwo(new technikum::string("Goodbye World"));
+
+        StringPtrOne.swap(StringPtrTwo);
+
+        EXPECT_STREQ(*StringPtrOne, "Goodbye World");
+        EXPECT_STREQ(*StringPtrTwo, "Hello World");
+}
+
+TEST(TestUniquePtr, UseCustomDeleter)
+{
+        auto DeleteWithMessage = [](auto ptr) { 
+			puts("Custom Deleter called!");
+			delete ptr; 
+			puts("Pointer deleted!");
+		};
+
+		technikum::unique_ptr<technikum::string, decltype(DeleteWithMessage)> StringPtr(new technikum::string("Hello World"), DeleteWithMessage);
+
+		StringPtr.reset();
+
+		EXPECT_EQ(StringPtr.get(), nullptr);
 }
